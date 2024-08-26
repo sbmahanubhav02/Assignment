@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@types/node": "^22.5.0"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.46.1"
+  }
+}

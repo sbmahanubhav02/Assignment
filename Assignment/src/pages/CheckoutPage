@@ -1,0 +1,27 @@
+class CheckoutPage {
+  constructor(page) {
+    this.page = page;
+    this.addressDetails = page.locator('#address_delivery');
+    this.orderReview = page.locator('#cart_info');
+    this.commentTextArea = page.locator('textarea[name="message"]');
+    this.placeOrderButton = page.locator('a.btn.btn-default.check_out');
+  }
+
+  async verifyAddressDetails() {
+    return await this.addressDetails.isVisible();
+  }
+
+  async verifyOrderReview() {
+    return await this.orderReview.isVisible();
+  }
+
+  async enterComment(comment) {
+    await this.commentTextArea.fill(comment);
+  }
+
+  async placeOrder() {
+    await this.placeOrderButton.click();
+  }
+}
+
+module.exports = CheckoutPage;
